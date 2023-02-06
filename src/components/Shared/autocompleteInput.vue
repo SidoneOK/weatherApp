@@ -4,7 +4,6 @@
       <input type="text" class="search_bar" placeholder="Search...." v-model="search" />
       <div class="loading">
         <span v-if="isLoading">Loading...</span>
-        <!-- v-if="isLoading" -->
       </div>
     </div>
     <div class="error_bar" v-if="error?.length > 0">
@@ -47,13 +46,12 @@ export default {
       a.date = currentDate;
       a.isLoading = true;
       setTimeout(function () {
-        // console.log("asdasdasd", a.date, currentDate);
         if (a.date != currentDate) {
           // знову натиснувся інпут
           return;
         }
         if (value.length < 4) {
-          // ввели мельше 4 символів
+          // ввели менше 4 символів
           a.error = "add more symbols";
           a.isLoading = false;
           return;
@@ -102,7 +100,6 @@ export default {
   width: 100%;
   border-radius: 5px;
   padding: 15px;
-  
 }
 .loading {
   position: absolute;
@@ -119,7 +116,7 @@ export default {
   transition: 0.4s;
   cursor: pointer;
 }
-.error_bar{
+.error_bar {
   padding: 15px;
   transition: 0.4s;
   position: absolute;
@@ -143,7 +140,7 @@ export default {
   border-radius: 5px;
   transition: 0.4s;
 }
-.found_city_wraper{
+.found_city_wraper {
   position: absolute;
   top: 50px;
   width: 300px;
@@ -152,13 +149,24 @@ export default {
 .found_city {
   border-radius: 0 0 5px 5px;
 }
-.search_box .search_bar:hover
- {
+.search_box .search_bar:hover {
   background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
 }
 .error_bar:hover,
-.found_city:hover{
+.found_city:hover {
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
+}
+@media screen and (max-width: 800px),
+  screen and (max-width: 800px) and (min-width: 1px) {
+    .search_box .search_bar {
+    margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+  }
+  .error_bar,
+  .found_city_wraper{
+    left: 0;
+    margin: 0;
+  }
 }
 </style>

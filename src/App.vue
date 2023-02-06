@@ -19,6 +19,7 @@ export default {
 }
 body {
   background-color: rgb(248 249 250);
+  min-width: 350px;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -26,7 +27,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
- 
 }
 </style>

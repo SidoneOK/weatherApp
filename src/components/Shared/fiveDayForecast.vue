@@ -19,7 +19,6 @@
 </template>
 
 <script>
-// import weatherResult from './weatherResult.vue';
 export default {
   components: {},
   props: {

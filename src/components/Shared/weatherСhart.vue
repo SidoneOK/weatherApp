@@ -17,7 +17,6 @@ export default {
     },
   },
   mounted() {
-    // console.log("графік", this.weatherData);
     const labels = [];
     const temperatures = [];
 

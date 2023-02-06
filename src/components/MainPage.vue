@@ -166,4 +166,15 @@ export default {
   opacity: 0;
   transform: translateY(-30%);
 }
+
+@media screen and (max-width: 800px), screen and (max-width: 800px) and (min-width: 1px) {
+  .wrapper {
+  max-width: 800px;
+  margin: 10px auto;
+  background: #fff;
+  border-radius: 7px;
+  padding: 20px;
+}
+}
+
 </style>
