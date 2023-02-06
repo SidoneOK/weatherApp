@@ -2,7 +2,6 @@
   <div class="weather_container" v-if="typeof weather.name != 'undefined'">
     <div class="current_forecast">
       <div class="weather_title_wrapper">
-        <!-- <h1  v-if="isFavorite"><i>{{ weather.name }} {{ weather.sys.country }}</i></h1> -->
         <div>
           <h1>{{ weather.name }} {{ weather.sys.country }}</h1>
 
@@ -66,7 +65,6 @@ export default {
   mounted() {
     weatherApi.getWeatherByCity(this.city).then((result) => {
       this.weather = result;
-      // console.log(this.weather);
     });
     weatherApi.getWeatherForFiveDays(this.city).then((result) => {
       this.processData(result);
@@ -74,7 +72,6 @@ export default {
   },
   data() {
     return {
-      text: "",
       weatherInfo: true,
       weather: {},
       weekData: [],
@@ -95,9 +92,7 @@ export default {
           daylyValue.push(element);
         }
         const date = new Date(element.dt * 1000);
-        // console.log("date",date)
         const day = date.getDate();
-        // console.log("day",day)
         if (savedHours < 0) {
           savedHours = date.getHours();
         }
@@ -116,7 +111,6 @@ export default {
     },
     onToggleFavorite() {
       this.$emit("onToggleFavorite", this.city);
-      // console.log(this.city);
     },
     toggleWeatherInfo() {
       this.weatherInfo = !this.weatherInfo;
@@ -292,6 +286,5 @@ h3 {
     display: block;
   }
 }
-
 
 </style>

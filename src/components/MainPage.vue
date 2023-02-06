@@ -79,8 +79,12 @@ export default {
         if (onlyAdd) {
           return;
         }
+        if (!confirm('are you sure?')) {
+          return
+        } 
         this.favoriteCities.splice(index, 1);
       } else {
+        
         if (this.favoriteCities.length >= config.maximumFavoriteCity) {
           alert("First delete one city");
           return;
