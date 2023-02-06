@@ -37,7 +37,7 @@ export default {
 
     },
     getUserInfo: function() {
-        return fetch('http://ip-api.com/json/')
+        return fetch('https://ipapi.co/json/')
             .then(res => {
                 return res.json();
             })

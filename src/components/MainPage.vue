@@ -5,9 +5,6 @@
       <actionButton @click="onPageChange(pages.pageHome)" text="HOME" :class="page == pages.pageHome ? 'active': ''" />
       <actionButton @click="onPageChange(pages.pageFavorite)" text="FAVORITE" :class="page == pages.pageFavorite ? 'active': ''" />
     </div>
-
-    <!-- {{ weather }} -->
-    <!-- <transition name="slide" mode="out-in"> -->
     <div v-if="page == pages.pageHome">
       <cityWeather
         @onToggleFavorite="onToggleFavorite"
@@ -26,10 +23,6 @@
         :key="city"
       />
     </div>
-
-    <!-- </Transition> -->
-    <!-- <button @click="addToFavorite">add</button> -->
-
   </div>
 </template>
 
@@ -78,7 +71,6 @@ export default {
     // змінюємо активний компонент
     onPageChange(page) {
       this.page = page;
-      console.log(this.page);
     },
     // додаємо або видаляємо місто з масива улюблені
     onToggleFavorite(city, onlyAdd) {
@@ -97,7 +89,7 @@ export default {
       }
       localStorage.setItem(config.favoriteStoreKey, JSON.stringify(this.favoriteCities));
 
-      console.log("FAVORITE CITY", this.favoriteCities);
+      // console.log("FAVORITE CITY", this.favoriteCities);
     },
     // в залежності від активного компонента додаємо місто в масив міст або масив улюблених
     onInputSelectCity(city) {

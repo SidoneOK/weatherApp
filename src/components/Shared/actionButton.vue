@@ -16,10 +16,8 @@
         type: String,
         required: false,
         default: "primary",
-        // цей вираз поверне true або false відповідно до токо який із класів ми внесемо в значення типу! і дозволяє нам вибрати лише з 2х існуючих класів і рядків а не любий рядок типу String
         validator(value) {
           return ["primary", "secondary"].includes(value);
-          // "primary", "secondary"  поверне true
         },
       },
     },
